@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        .fraud-circle {
+            display: inline-block;
+            width: 140px; /* Lebih besar sekitar 80% */
+            height: 140px; /* Lebih besar sekitar 80% */
+            border-radius: 50%;
+            font-size: 24px; /* Ukuran teks lingkaran */
+            line-height: 140px; /* Penyesuaian posisi teks di dalam lingkaran */
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            margin: 0 60px; /* Jarak antara lingkaran */
+        }
+
+        .fraud {
+            background-color: red;
+        }
+
+        .not-fraud {
+            background-color: green;
+        }
+
+        .prediction-title {
+            text-align: center;
+        }
+
+        .prediction-results {
+            text-align: center;
+        }
+
+        .upload-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px; /* Jarak dari lingkaran ke teks "Upload Another File" */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="prediction-title">Prediction Result</h1>
+    <div class="prediction-results">
+        <span class="fraud-circle fraud">{{ fraud_percentage }}%</span>
+        <span class="fraud-circle not-fraud">{{ not_fraud_percentage }}%</span>
+    </div>
+    <a href="/" class="upload-link">Upload Another File</a>
+</body>
+</html>

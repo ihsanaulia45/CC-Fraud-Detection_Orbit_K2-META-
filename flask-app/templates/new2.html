@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input CSV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="buttons">
+        <button type="submit" class="button-submit">Submit</button>
+        <button type="button" class="button-delete">Hapus File</button>
+    </div>
+    <div class="card member-card">
+        <div class="input-csv">
+            <input type="file" class="csv-input" accept=".csv" >
+        </div>
+        
+    </div>
+
+    <script>
+        document.querySelector(".csv-input").addEventListener("change", function() {
+            var file = this.files[0];
+            var fileNode = document.createElement("div");
+            fileNode.textContent = file.name;
+            document.querySelector(".input-csv").appendChild(fileNode);
+        });
+
+        document.querySelector(".button-delete").addEventListener("click", function() {
+
+            var fileNode = document.querySelector(".input-csv").querySelector("div");
+            fileNode.remove();
+        });
+    </script>
+</body>
+</html>
